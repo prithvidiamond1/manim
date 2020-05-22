@@ -44,6 +44,11 @@ chunk_length = len(chunks)
 
 class bars(Scene):
     def construct(self):
+        CONFIG = {"camera_config":{
+            "background_image": "/content/manim/assets/raster_images/bgskyhighHD.jpg"
+            }
+        }
+
         w = 0.185
         color = WHITE
 
@@ -51,8 +56,8 @@ class bars(Scene):
         bar_vgap = 0.03
         animationlist, prev_h = [], [init_h for x in range(50)]
 
-        bg_image = ImageMobject('bgskyhighHD')
-        self.add(bg_image)
+        # bg_image = ImageMobject('bgskyhighHD')
+        # self.add(bg_image)
 
         # title = Text('')
         title = Text(songname)
@@ -81,7 +86,7 @@ class bars(Scene):
                 self.play(AnimationGroup(*([FadeInFromLarge(title, scale_factor=1.5), FadeInFromLarge(line, scale_factor=0.8)]+startlist)), run_time=1)
                 self.add_sound('deadmau5 - Ghosts N Stuff.wav', gain=2)
 
-            self.add(bg_image)
+            # self.add(bg_image)
             self.add(line)
             self.add(title)
             self.play(AnimationGroup(*animationlist), run_time=(1/(framerate)))
