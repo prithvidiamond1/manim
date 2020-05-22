@@ -56,7 +56,7 @@ class bars(Scene):
         self.add(bg_image)
 
         # title = Text('')
-        title = Text(songname)
+        title = Text(songname, font='DM Sans')
         title.move_to((((FRAME_HEIGHT/4)+1)*DOWN)+((FRAME_WIDTH/4)*LEFT)+(0.4*RIGHT))
 
         line = Line(start=((FRAME_WIDTH/2)*LEFT), end=((FRAME_WIDTH/2)*RIGHT), buff=0.4)
