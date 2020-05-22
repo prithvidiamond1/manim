@@ -51,18 +51,15 @@ class bars(Scene):
         bar_vgap = 0.03
         animationlist, prev_h = [], [init_h for x in range(50)]
 
-        bg_image = ImageMobject('bgskyhighHD')
+        bg_image = ImageMobjectFromCamera('bgskyhighHD')
         self.add(bg_image)
 
         # title = Text('')
         title = Text(songname)
         title.move_to((((FRAME_HEIGHT/4)+1)*DOWN)+((FRAME_WIDTH/4)*LEFT)+(0.4*RIGHT))
-        # self.play(FadeIn(title), run_time=2)
 
         line = Line(start=((FRAME_WIDTH/2)*LEFT), end=((FRAME_WIDTH/2)*RIGHT), buff=0.4)
         line.move_to(((FRAME_HEIGHT/4)*DOWN)+((init_h + bar_vgap)*DOWN))
-
-        # self.add_sound('deadmau5 - Ghosts N Stuff.wav', gain=2)
 
         startlist, endlist = [], []
 
@@ -84,6 +81,7 @@ class bars(Scene):
                 self.play(AnimationGroup(*([FadeInFromLarge(title, scale_factor=1.5), FadeInFromLarge(line, scale_factor=0.8)]+startlist)), run_time=1)
                 self.add_sound('deadmau5 - Ghosts N Stuff.wav', gain=2)
 
+            self.add(bg_image)
             self.add(line)
             self.add(title)
             self.play(AnimationGroup(*animationlist), run_time=(1/(framerate)))
@@ -92,8 +90,6 @@ class bars(Scene):
             if cn == chunk_length-1:
                 self.add(title)
                 self.play(AnimationGroup(*([FadeOut(title), FadeOut(line)]+endlist)), run_time=1)
-        
-        # self.play(FadeOut(title), run_time=2)
 
 
 
