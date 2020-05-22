@@ -72,6 +72,7 @@ class bars(Scene):
 
                 if cn == 0:
                     startlist.append(FadeIn(rect))
+                if cn == chunk_length-1:
                     endlist.append(FadeOut(rect))
 
                 rect.stretch_about_point(prev_h[idx-1], 1, rect.get_bottom())
