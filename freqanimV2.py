@@ -51,7 +51,7 @@ class bars(Scene):
         bar_vgap = 0.03
         animationlist, prev_h = [], [init_h for x in range(50)]
 
-        bg_image = ImageMobjectFromCamera('bgskyhighHD')
+        bg_image = ImageMobject('bgskyhighHD')
         self.add(bg_image)
 
         # title = Text('')
