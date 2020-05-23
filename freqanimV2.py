@@ -38,7 +38,7 @@ for chunk in chunks:
     tempchunks.append(np.array(tempchunk))
 chunks = np.array(tempchunks)
 
-chunks = chunks[:70]
+# chunks = chunks[:70]
 chunk_length = len(chunks)
 
 
