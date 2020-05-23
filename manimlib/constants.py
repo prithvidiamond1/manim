@@ -134,8 +134,8 @@ MEDIUM_QUALITY_CAMERA_CONFIG = {
 }
 
 LOW_QUALITY_CAMERA_CONFIG = {
-    "pixel_height": 720,
-    "pixel_width": 1280,
+    "pixel_height": 1080,
+    "pixel_width": 1920,
     "frame_rate": 30,
 }
 
