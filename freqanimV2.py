@@ -38,7 +38,7 @@ for chunk in chunks:
     tempchunks.append(np.array(tempchunk))
 chunks = np.array(tempchunks)
 
-# chunks = chunks[:70]
+chunks = chunks[:70]
 chunk_length = len(chunks)
 
 
@@ -57,7 +57,7 @@ class bars(Scene):
 
         # title = Text('')
         title = Text(songname, font='DM Sans')
-        title.move_to((((FRAME_HEIGHT/4)+0.5)*DOWN)+((FRAME_WIDTH/4)*LEFT)+(0.3*RIGHT))
+        title.move_to((((FRAME_HEIGHT/4)+0.5)*DOWN)+((FRAME_WIDTH/2)*LEFT)+((title.get_width()+0.4)*RIGHT))
 
         line = Line(start=((FRAME_WIDTH/2)*LEFT), end=((FRAME_WIDTH/2)*RIGHT), buff=0.4)
         line.move_to(((FRAME_HEIGHT/4)*DOWN)+((init_h + bar_vgap)*DOWN))
