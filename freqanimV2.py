@@ -81,7 +81,7 @@ class bars(Scene):
 
             if cn == 0:
                 self.play(AnimationGroup(*([FadeInFromLarge(title, scale_factor=1.5), FadeInFromLarge(line, scale_factor=0.8)]+startlist)), run_time=1)
-                self.add_sound('deadmau5 - Ghosts N Stuff.wav', gain=2)
+                self.add_sound('deadmau5 - Ghosts N Stuff.wav')
 
             self.add(bg_image)
             self.add(line)
