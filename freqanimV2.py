@@ -60,7 +60,7 @@ class bars(Scene):
 
         # title = Text('')
         title = Text(songname, font=fontname)
-        title.move_to((((FRAME_HEIGHT/4)+0.5)*DOWN)+((FRAME_WIDTH/2)*LEFT)+((title.get_width()+0.4)*RIGHT))
+        title.move_to((((FRAME_HEIGHT/4)+0.5)*DOWN))
 
         line = Line(start=((FRAME_WIDTH/2)*LEFT), end=((FRAME_WIDTH/2)*RIGHT), buff=0.4)
         line.move_to(((FRAME_HEIGHT/4)*DOWN)+((init_h + bar_vgap)*DOWN))
