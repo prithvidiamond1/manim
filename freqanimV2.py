@@ -13,8 +13,11 @@ chunkrange = 50
 framerate = 10
 
 songname = "deadmau5 - Ghosts N Stuff"
+song_filename = "deadmau5 - Ghosts N Stuff.wav"
+bg_filename = "bgskyhighHD"
+fontname = "DM Sans"
 
-data, samplerate = sf.read('deadmau5 - Ghosts N Stuff.wav', dtype='int16')
+data, samplerate = sf.read(song_filename, dtype='int16')
 
 frequencies = np.abs(np.fft.fft(data))
 
@@ -51,12 +54,12 @@ class bars(Scene):
         bar_vgap = 0.03
         animationlist, prev_h = [], [init_h for x in range(50)]
 
-        bg_image = ImageMobject('bgskyhighHD')
+        bg_image = ImageMobject(bg_filename)
         bg_image.set_width(self.camera.get_frame_width()).set_height(self.camera.get_frame_height())
         self.add(bg_image)
 
         # title = Text('')
-        title = Text(songname, font='DM Sans')
+        title = Text(songname, font=fontname)
         title.move_to((((FRAME_HEIGHT/4)+0.5)*DOWN)+((FRAME_WIDTH/2)*LEFT)+((title.get_width()+0.4)*RIGHT))
 
         line = Line(start=((FRAME_WIDTH/2)*LEFT), end=((FRAME_WIDTH/2)*RIGHT), buff=0.4)
@@ -81,7 +84,7 @@ class bars(Scene):
 
             if cn == 0:
                 self.play(AnimationGroup(*([FadeInFromLarge(title, scale_factor=1.5), FadeInFromLarge(line, scale_factor=0.8)]+startlist)), run_time=1)
-                self.add_sound('deadmau5 - Ghosts N Stuff.wav')
+                self.add_sound(song_filename)
 
             self.add(bg_image)
             self.add(line)
