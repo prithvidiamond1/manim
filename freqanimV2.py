@@ -2,7 +2,6 @@
 from manimlib.imports import *
 
 import soundfile as sf
-import sounddevice as sd
 import math
 
 import numpy as np
