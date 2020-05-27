@@ -5,15 +5,18 @@ import soundfile as sf
 import math
 
 import numpy as np
+from scipy import ndimage as filters
 import random
 
 freqrange = 255
 chunkrange = 50
 framerate = 10
 
-songname = "deadmau5 - Ghosts N Stuff"
-song_filename = "deadmau5 - Ghosts N Stuff.wav"
-bg_filename = "bgskyhighHD"
+gfilter_sigma = 1
+
+songname = "Laszlo - Supernova"
+song_filename = "Laszlo - Supernova.wav"
+bg_filename = "bggalaxyHD"
 fontname = "DM Sans"
 
 data, samplerate = sf.read(song_filename, dtype='int16')
@@ -37,10 +40,11 @@ for chunk in chunks:
     tempchunk = []
     for array in chunksplit:
         tempchunk.append(np.sqrt(np.mean(np.square(array))))
-    tempchunks.append(np.array(tempchunk))
+    blurredchunk = filters.gaussian_filter1d(tempchunk, gfilter_sigma)
+    tempchunks.append(blurredchunk)
 chunks = np.array(tempchunks)
 
-# chunks = chunks[:70]
+# chunks = chunks[:300]
 chunk_length = len(chunks)
 
 
