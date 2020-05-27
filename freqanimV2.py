@@ -1,3 +1,4 @@
+# Credit and a graditude of thanks to Reddit user u/vither999 for helping me out with this!
 
 from manimlib.imports import *
 
